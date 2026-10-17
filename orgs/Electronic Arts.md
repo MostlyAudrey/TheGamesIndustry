@@ -10,7 +10,9 @@ priority_rationale: "Anchor of the map — biggest leveraged buyout in history; 
 sources:
   - "[[sources/2025-09-30 — nbc-ea-52-5b-pe-buyout]]"
   - "[[sources/2025-09-29 — latimes-ea-55b-take-private]]"
-last_reviewed: 2026-10-15
+  - "[[sources/2024-02-28 — cnbc-ea-670-layoffs]]"
+  - "[[sources/2025-04-29 — gamedeveloper-respawn-hundreds-layoffs]]"
+last_reviewed: 2026-10-16
 hq: "Redwood City, CA"
 founded: "1982 (by Trip Hawkins)"
 employees: "≈14,500 (as of end of March 2025, [[sources/2025-09-30 — nbc-ea-52-5b-pe-buyout]])"
@@ -29,16 +31,24 @@ studios:
   - "Respawn (L.A., CA)"
   - "DICE (Gothenburg, SE + other)"
 key_decisions:
-  - "2024: planned to cut 5% of workforce (as of 2025-09-30, [[sources/2025-09-30 — nbc-ea-52-5b-pe-buyout]])"
-  - "2025-05: closed several hundred positions, incl. ~100 at Respawn (as of 2025-09-29, [[sources/2025-09-29 — latimes-ea-55b-take-private]])"
+  - "2023: EA reduced staff by ~6% (~804 positions) (as of 2024-03-13, [[sources/2024-02-28 — cnbc-ea-670-layoffs]])"
+  - "2024-02: planned to cut 5% of workforce (~670 positions); $125-165M restructuring cost (as of 2024-02-28, [[sources/2024-02-28 — cnbc-ea-670-layoffs]])"
+  - "2024-02: Canceled unannounced Star Wars FPS; shuttered Ridgeline Games (as of 2024-03-21, [[sources/2024-03-21 — ign-respawn-23-layoffs]])"
+  - "2025-01: BioWare headcount collapsed from >200 to <100 in restructuring (as of 2025-02-02, [[sources/2025-02-02 — pcgamer-bioware-under-100]])"
+  - "2025-04: Eliminated 300-400 positions company-wide; Respawn lost 2 incubation projects incl. Apex extraction shooter (as of 2025-04-29, [[sources/2025-04-29 — gamedeveloper-respawn-hundreds-layoffs]])"
   - "2025-09-29: agreed to be taken private in ~$52.5B deal (as of 2025-09-30, [[sources/2025-09-30 — nbc-ea-52-5b-pe-buyout]])"
 labour:
-  status: "TBD — check BioWare/Maxis/EA Sports/Respawn for IWF/3A/UVW organizing"
+  status: "UVW-CWA issued public statement opposing buyout (2025-10-15); individual studio IWF/3A status TBD (as of 2026-10-16)"
+  union: "[[orgs/UVW-CWA Local 9433]]"
   layoffs:
-    - "2024: ~725 (5% of ~14,500, as of 2025-09-30, [[sources/2025-09-30 — nbc-ea-52-5b-pe-buyout]]) — see [[events/2024 — EA 5pct workforce cut]]"
-    - "2025-05: ~100 at Respawn + several hundred total (as of 2025-09-29, [[sources/2025-09-29 — latimes-ea-55b-take-private]]) — see [[events/2025 — EA-Respawn 100-layoffs]]"
+    - "2023-03: ~804 (~6% of 13,400) (as of 2024-03-13, [[sources/2024-02-28 — cnbc-ea-670-layoffs]])"
+    - "2024-02: ~670 (5% of ~14,500); $125-165M restructuring (as of 2024-02-28, [[sources/2024-02-28 — cnbc-ea-670-layoffs]])"
+    - "2024-03: 23 at Respawn (Apex Legends team) (as of 2024-03-21, [[sources/2024-03-21 — ign-respawn-23-layoffs]])"
+    - "2024-04: Undisclosed at Maxis (Sims 5 cancellation) (as of 2024-07-16, multi-source)"
+    - "2025-01: BioWare headcount >200 to <100; ~24+ laid off (as of 2025-02-02, [[sources/2025-02-02 — pcgamer-bioware-under-100]])"
+    - "2025-04: 300-400 company-wide; ~100 at Respawn; 2 projects canceled (as of 2025-04-29, [[sources/2025-04-29 — gamedeveloper-respawn-hundreds-layoffs]])"
   hiring: []
-  net_labor_flow: "~1,000+ jobs cut (2024-2025), no documented hiring sprees under Wilson tenure (as of 2025-09-30)"
+  net_labor_flow: "~1,800+ jobs cut (2023-2025); no documented hiring sprees under Wilson tenure (as of 2025-04-29)"
 ---
 
 # Electronic Arts (EA)

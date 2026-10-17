@@ -8,7 +8,12 @@
 - [x] **a16z Games Fund portfolio (partial)** — a16z node + Mythical Games + Bonfire Studios. ✅ (2026-10-15)
 - [x] **Silver Lake LPs (pocket-book layer)** — SLP VII $20.5B, $102bn AUM, AZ + NJ pensions. ✅ (2026-10-15)
 - [x] **EA labor-flow events** — 2024 5% cut, 2025-05 Respawn 100. ✅ (2026-10-15)
+- [x] **Batch 3 — EA studio labor layer** — Respawn, BioWare, Maxis, EA Sports (full nodes with labor data). ✅ (2026-10-16)
+- [x] **UVW-CWA union node** — industry-wide union; launched GDC 2025. ✅ (2026-10-16)
+- [x] **New event nodes** — BioWare headcount collapse; EA 300-400 Apr 2025; UVW-CWA founding. ✅ (2026-10-16)
+- [x] **Industry layoff tracker** — aggregated 2023-2026 labor data. ✅ (2026-10-16)
 - [ ] **Silver Lake remaining 42 LPs** — Pull the full PitchBook list of 44 LPs for SLP VII.
+- [ ] **Indie VC expansion** — Powerhouse, The Games Fund, March Capital, Konvoy.
 
 ## NEXT (queued, pre-ordered)
 - [ ] **Affinity Partners LPs** — the pocket-book layer (Kushner's fund).
@@ -16,30 +21,30 @@
 - [ ] **CVC LPs** + full gaming portfolio.
 - [ ] **EQT LPs** beyond CPP/Temasek.
 - [ ] **Haveli LPs**.
-- [ ] **EA studio labor** — BioWare, Maxis, EA Sports, Respawn: IWF/3A/UVW organizing, strikes, contract terms, **layoffs, hiring sprees** (labor-flow tracking).
-- [ ] **Respawn Entertainment org node** — L.A. studio, ~100 layoffs May 2025, IWF status.
-- [ ] **BioWare org node** — EDM + Montreal, IWF status, 2023-24 layoff history.
-- [ ] **Maxis org node** — EDM, CA, IWF status.
-- [ ] **EA Sports org node** — multiple US studios, labor status.
+- [ ] **Keywords Edmonton United** — unionized QA workers who picketed BioWare Edmonton in Nov 2023.
+- [ ] **Ridgeline Games closure** — Battlefield support studio shuttered by EA 2024.
+- [ ] **DICE** — EA's Stockholm studio; labor status.
+- [ ] **Microsoft Gaming** — labor nodes (ZeniMax Workers United, Activision Blizzard CWA organizing, 1,900 layoffs 2024).
+- [ ] **Sony PlayStation** — 900 layoffs Feb 2024.
+- [ ] **Riot Games** — 530 layoffs Jan 2024.
+- [ ] **Epic Games** — 830 layoffs Sep 2023.
+- [ ] **Non-EA publisher studio labor** — Ubisoft, Take-Two, Embracer, Unity.
 - [ ] **Dream Games ~$5B** — archive the Reuters/CorpDev source, verify EV, US/CA staff.
 - [ ] **Behaviour Interactive (Montreal)** — headcount + labor status.
 - [ ] **Keywords Studios (US/CA)** — headcount + labor status.
 - [ ] **Mythical Games + Bonfire Studios** — a16z round(s) + size, labor status.
-- [ ] **Industry-wide layoff tracker** — pull major 2023-2026 layoff events across the industry (not just EA) for the labor-flow report.
-- [ ] **Indie expansion** — other indie VCs (Powerhouse, The Games Fund, March Capital, Konvoy) + their US/CA studio portfolios.
+- [ ] **Industry-wide layoff tracker** — expand with verified source nodes for each company.
 
 ## STUBS (created but not yet researched)
 - [[orgs/Dream Games]] — CVC ~$5B deal, source to archive
 - [[orgs/Steer Studios]] — Savvy portfolio, to verify
 - ~10 other a16z gaming-adjacent studios (see source 2026-01-15)
-- [[orgs/Respawn Entertainment]] — to create (L.A. studio, 100 layoffs May 2025)
-- [[orgs/BioWare]] — to create (EDM + Montreal, IWF)
-- [[orgs/Maxis]] — to create (EDM, CA)
-- [[orgs/EA Sports]] — to create (multiple US studios)
+- [[orgs/DICE]] — Stockholm studio, to create
+- [[orgs/Ridgeline Games]] — shuttered, to create
 
 ## BLOCKED (waiting on Audrey)
-- [ ] **Q1 — GitHub repo URL.** Blocks push. Local work can start without it.
-- [ ] **Q3 — LP depth.** (my read: yes, name the LPs) — proceed on that assumption?
+- [ ] **Q1 — GitHub repo URL.** ✅ RESOLVED — repo pushed 2026-10-16.
+- [ ] **Q3 — LP depth.** (my read: yes) — proceeding.
 - [ ] **Q4 — X/Twitter.** Apify paid plan: yes/no?
 
 ## DONE (recent completions)
@@ -47,9 +52,12 @@
 - 2026-10-15 — **Batch 2a (a16z portfolio):** a16z node updated, Mythical Games + Bonfire Studios built, GamesBeat source + a16z investment list archived.
 - 2026-10-15 — **Batch 2b (Silver Lake LPs):** SLP VII $20.5B + $102bn AUM confirmed; AZ + NJ pension LPs built; Silver Lake node updated.
 - 2026-10-15 — **Batch 2c (EA labor-flow):** 2024 5% cut event + 2025-05 Respawn 100 event created; EA labour section updated with layoffs array + net_labor_flow; schema + conventions updated to make labor-flow tracking required.
+- 2026-10-16 — **Repo pushed:** https://github.com/MostlyAudrey/TheGamesIndustry
+- 2026-10-16 — **Batch 3 (EA studio labor layer + union anchor):** Respawn, BioWare, Maxis, EA SPORTS nodes fully sourced with labor data; UVW-CWA node built; 3 new event nodes (UVW-CWA founding, BioWare headcount collapse, EA 300-400 Apr 2025); industry layoff tracker; 8 new sources archived; 27 orgs / 4 events / 17 sources / 1 labour tracker.
 
 ## Re-rank log
-- 2026-10-15 — Initial batch 1; priorities assigned per schema.
-- 2026-10-15 — Batch 2a: a16z promoted to P=1 (3 sources); Mythical Games + Bonfire Studios added at P=3.
-- 2026-10-15 — Batch 2b: Silver Lake promoted to P=1 (3 sources); AZ + NJ pensions added at P=3.
-- 2026-10-15 — Batch 2c: EA labor-flow events created; Respwan/BioWare/Maxis/EA Sports added to STUBS for next batch.
+- 2026-10-15 — Initial batch; priorities assigned per schema.
+- 2026-10-15 — Batch 2a: a16z promoted to P=1 (3 sources); Mythical, Bonfire added at P=3.
+- 2026-10-15 — Batch 2b: Silver Lake promoted to P=1 (3 sources); AZ+NJ pensions added at P=3.
+- 2026-10-15 — Batch 2c: EA labor events created; Respawn/BioWare/Maxis/EA Sports added to STUBS.
+- 2026-10-16 — Batch 3: UVW-CWA, Respawn, BioWare, EA Sports promoted to P=1; Maxis promoted to P=2; 3 event nodes and industry layoff tracker created.
