@@ -12,28 +12,30 @@
 - [x] **UVW-CWA union node** — industry-wide union; launched GDC 2025. ✅ (2026-10-16)
 - [x] **New event nodes** — BioWare headcount collapse; EA 300-400 Apr 2025; UVW-CWA founding. ✅ (2026-10-16)
 - [x] **Industry layoff tracker** — aggregated 2023-2026 labor data. ✅ (2026-10-16)
-- [ ] **Silver Lake remaining 42 LPs** — Pull the full PitchBook list of 44 LPs for SLP VII.
-- [ ] **Indie VC expansion** — Powerhouse, The Games Fund, March Capital, Konvoy.
+## NOW (current batch, in order)
+- [x] **AAA publisher labor wave** — Sony, Riot, Epic, Ubisoft, Take-Two, Embracer + Microsoft Gaming full ecosystem (ZeniMax, Activision QA, Blizzard coalition). ✅ (2026-10-17)
+- [ ] **Unity** — 1,800 layoffs Jan 2024 (25% of workforce); runtime fee controversy; CEO cycle.
+- [ ] **Bungie** — 220 layoffs Oct 2024 (17%); Sony acquisition aftermath; union status?
+- [ ] **Warner Bros. Games** — $300M write-downs (Suicide Squad); studio closures.
+- [ ] **Nintendo** — labor record.
+- [ ] **Square Enix / Sega** — restructures, layoffs.
+- [ ] **Discord** — 170 layoffs Jan 2024.
 
 ## NEXT (queued, pre-ordered)
+- [ ] **Silver Lake remaining 42 LPs** — Pull the full PitchBook list of 44 LPs for SLP VII.
 - [ ] **Affinity Partners LPs** — the pocket-book layer (Kushner's fund).
 - [ ] **a16z LPs** — the pocket-book layer for the Games fund.
 - [ ] **CVC LPs** + full gaming portfolio.
 - [ ] **EQT LPs** beyond CPP/Temasek.
 - [ ] **Haveli LPs**.
+- [ ] **Indie VC expansion** — Powerhouse, The Games Fund, March Capital, Konvoy.
 - [ ] **Keywords Edmonton United** — unionized QA workers who picketed BioWare Edmonton in Nov 2023.
 - [ ] **Ridgeline Games closure** — Battlefield support studio shuttered by EA 2024.
 - [ ] **DICE** — EA's Stockholm studio; labor status.
-- [ ] **Microsoft Gaming** — labor nodes (ZeniMax Workers United, Activision Blizzard CWA organizing, 1,900 layoffs 2024).
-- [ ] **Sony PlayStation** — 900 layoffs Feb 2024.
-- [ ] **Riot Games** — 530 layoffs Jan 2024.
-- [ ] **Epic Games** — 830 layoffs Sep 2023.
-- [ ] **Non-EA publisher studio labor** — Ubisoft, Take-Two, Embracer, Unity.
 - [ ] **Dream Games ~$5B** — archive the Reuters/CorpDev source, verify EV, US/CA staff.
 - [ ] **Behaviour Interactive (Montreal)** — headcount + labor status.
 - [ ] **Keywords Studios (US/CA)** — headcount + labor status.
 - [ ] **Mythical Games + Bonfire Studios** — a16z round(s) + size, labor status.
-- [ ] **Industry-wide layoff tracker** — expand with verified source nodes for each company.
 
 ## STUBS (created but not yet researched)
 - [[orgs/Dream Games]] — CVC ~$5B deal, source to archive

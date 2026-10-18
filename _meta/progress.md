@@ -10,36 +10,36 @@
 - **Batch 2c complete:** 2026-10-15 — EA labor-flow events (2024 5%, 2025 Respawn 100); schema + conventions updated.
 - **Repo live:** 2026-10-16 — https://github.com/MostlyAudrey/TheGamesIndustry
 - **Batch 3 complete:** 2026-10-16 — EA studio labor layer (Respawn, BioWare, Maxis, EA Sports full nodes); UVW-CWA union node; 3 event nodes (UVW-CWA founding, BioWare headcount collapse, EA 300-400 Apr 2025); industry layoff tracker; 8 new sources.
+- **Batch 4 complete:** 2026-10-17 — AAA publisher labor wave — all 7 major Western publishers fully researched and sourced. Sony, Microsoft Gaming (with 3 union nodes), Riot, Epic, Ubisoft, Take-Two, Embracer. ~63 new source files, ~41 event nodes, huge expansion of industry layoff tracker.
 
 ## Counts
-- orgs: 27
-- people: 1
-- events: 4
-- labour: 1 (industry-layoff-tracker)
-- sources: 17
+- orgs: 36 (+9)
+- people: 3 (+2) — Andrew Wilson, Lars Wingefors, Phil Rogers
+- events: 45 (+41)
+- labour: 1 (industry-layoff-tracker, heavily expanded)
+- sources: 92 (+75)
 
-## Priority distribution
-- T1 (P=1): 11 (Silver Lake, PIF, Affinity, a16z, EA, UVW-CWA, Respawn, BioWare, EA Sports, CPP, AZ pension)
-- T2 (P=2): 6 (CVC, EQT, Keywords, Jagex, Behaviour, Scopely)
-- T3 (P=3): 8 (NJ pension, Mythical, Bonfire, Haveli, Temasek, ESL FACEIT, Dream, Maxis)
-- T4 (P=4): 2 (Candivore, Omeda, Steer)
+## Publisher labor status at a glance
 
-## Recent
-- 2026-10-15 — Skeleton scaffolded (capital-first, prioritization system built in).
-- 2026-10-15 — Batch 1: capital backbone + EA anchor + US/CA studios + LPs. 5 sources archived (all HTTP 200 verified). All numbers date-stamped. Andrew Wilson tenure ledger built.
-- 2026-10-15 — Batch 2a: a16z Games Fund I+II (>$1.2B AUM), Mythical Games (Sherman Oaks CA), Bonfire Studios (Irvine CA). GamesBeat + a16z investment list archived.
-- 2026-10-15 — Batch 2b: Silver Lake SLP VII $20.5B (2024-05-08), $102bn AUM, 44 LPs; AZ + NJ pension LPs. Silver Lake SLP VII close + NJ Treasury sources archived.
-- 2026-10-15 — Batch 2c: EA labor-flow events (2024 5% cut, 2025-05 Respawn 100) created as dedicated event nodes; EA labour section updated with layoffs array + net_labor_flow.
-- 2026-10-16 — **Batch 3:** EA studio labor layer fully built and sourced. UVW-CWA union anchor node written. 3 new event nodes tracking critical labor inflection points. Industry layoff tracker created with aggregated 2023-2026 data. 8 new sources archived.
+| Publisher | Layoffs tracked | Union | Net flow | Key |
+|---|---|---|---|---|
+| **Microsoft Gaming** | ~5,100+ | ✅ 4,000+ CWA | 📉 negative | Blizzard contract Sep 2026; Activision QA strike Oct 2026 |
+| **Sony Interactive** | ~1,220+ | ❌ none | 📉 negative | 8 studio closures since 2020 |
+| **Electronic Arts** | ~1,170+ | ⚠️ UVW-CWA formed | 📉 negative | Take-private pending (Silver Lake/PIF) |
+| **Ubisoft** | ~4,100+ reduction | ✅ STJV (France) | 📉 negative | Tencent bailout; 3 major strikes; Halifax union closed |
+| **Epic Games** | ~1,830+ | ⚠️ Bandcamp United (divested) | 📉 negative | AI pivot Oct 2026 |
+| **Riot Games** | ~700+ | ❌ no formal union | 📉 negative | $100M discrimination settlement; 2019 walkout |
+| **Take-Two** | ~609+ | ❌ none (largest holdout) | 📉 negative | Roll7+Intercept closed; Gearbox +800 (acquisition) |
+| **Embracer** | 4,532 layoffs; ~10,700 total headcount loss | ⚠️ works councils (EU) | 📉 catastrophic | 44 studios closed; 80 games canceled; corporate split; founder stepped down 2025 |
 
 ## What's next (from queue)
-1. **Silver Lake remaining 42 LPs** — Pull the full PitchBook list of 44 LPs for SLP VII.
-2. **Affinity Partners LPs** — the pocket-book layer (Kushner's fund).
-3. **a16z LPs** — the pocket-book layer for the Games fund.
-4. **CVC LPs** + full gaming portfolio.
-5. **Indie VC expansion** — Powerhouse, The Games Fund, March Capital, Konvoy.
-6. **Keywords Edmonton United** — unionized QA workers who picketed BioWare Edmonton in Nov 2023.
-7. **Ridgeline Games closure** — Battlefield support studio shuttered by EA 2024.
-8. **DICE** — EA's Stockholm studio; labor status.
-9. **Microsoft Gaming** — labor nodes (ZeniMax Workers United, Activision Blizzard CWA organizing, 1,900 layoffs 2024).
-10. **Other non-EA publisher labor** — Sony, Riot, Epic, Ubisoft, Take-Two, Embracer, Unity.
+1. **Unity** — 1,800 layoffs Jan 2024 (25% of workforce); runtime fee controversy; CEO cycle
+2. **Bungie** — 220 layoffs Oct 2024 (17%); Sony acquisition aftermath; union status?
+3. **Warner Bros. Games** — massive $300M write-downs (Suicide Squad); studio closures
+4. **Nintendo** — labor record (historically quiet)
+5. **Square Enix / Sega** — restructures, layoffs
+6. **Discord** — 170 layoffs Jan 2024 (17%)
+7. **LP depth wave** — Silver Lake remaining 42 LPs; Affinity LPs; a16z LPs; CVC LPs
+8. **Indie VC expansion** — Powerhouse, The Games Fund, March Capital, Konvoy
+9. **Keywords Edmonton United** — unionized QA; picketed BioWare Edmonton Nov 2023
+10. **DICE** — EA's Stockholm studio; labor status
