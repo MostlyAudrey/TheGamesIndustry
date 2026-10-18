@@ -11,6 +11,7 @@
 ## Orgs
 | Node | Sector | Region | P | Conf | Src | Note |
 |---|---|---|---|---|---|---|
+| [[orgs/Gearbox Entertainment]] | studio | US | 2 | verified | 5 | Borderlands; sold Embracer→Take-Two Mar 2024; multiple layoffs |
 | [[orgs/Silver Lake Partners]] | pe-fund | US | 1 | verified | 3 | EA anchor; ~$102bn AUM; SLP VII $20.5B; LPs: AZ+NJ pensions |
 | [[orgs/Public Investment Fund of Saudi Arabia]] | sovereign-wealth-fund | SA→US | 1 | verified | 2 | EA anchor; Savvy platform; $38B gaming mandate; Embracer $1B stake |
 | [[orgs/Affinity Partners]] | pe-fund | US | 1 | verified | 1 | Kushner PE; EA anchor |
@@ -56,6 +57,12 @@
 | [[orgs/Candivore]] | studio (mobile) | IL | 4 | verified | 1 | Haveli portfolio |
 | [[orgs/Omeda Studios]] | studio | UK | 4 | verified | 1 | Haveli portfolio |
 | [[orgs/Steer Studios]] | studio | TBD | 4 | reported | 0 | Savvy portfolio — to verify |
+| [[orgs/Netmarble]] | publisher | KR | 3 | verified | 4 | Korean mobile publisher; union formed 2024; Tencent ~17.5% |
+| [[orgs/Saber Interactive]] | studio | US/RU | 3 | verified | 3 | Space Marine 2; sold to Beacon 2024; NWI layoffs 2023 |
+| [[orgs/Playtika]] | publisher (mobile) | IL | 3 | verified | 3 | Mobile casino; 10% layoffs 2024, 15% layoffs 2026; AI pivot |
+| [[orgs/Moon Active]] | publisher (mobile) | IL | 3 | verified | 3 | Coin Master; ~$2B rev; 2 layoff rounds 2025-2026 despite record rev |
+| [[orgs/Lilith Games]] | publisher (mobile) | CN | 4 | verified | 3 | AFK Arena; layoffs 2022-2024 including ~40 in Dec 2024 |
+| [[orgs/Playrix]] | publisher (mobile) | IE/RU | 4 | verified | 4 | Homescapes; Russia/Belarus exit 2022-2025 relocating ~1,500 staff |
 
 ## People
 | Node | Role | Orgs | P | Conf | Src | Note |
@@ -74,6 +81,19 @@
 | [[events/2024-05 — Take-Two studio closures (Roll7+Intercept)]] | 2024-05-01 | layoff | Take-Two, Roll7, Intercept Games | 1 | verified | 3 |
 | [[events/2024-07 — SAG-AFTRA strike vs Take-Two]] | 2024-07-26 | strike | Take-Two, SAG-AFTRA | 2 | verified | 1 |
 | [[events/2024-11 — Private Division sale]] | 2024-11-06 | acquisition | Take-Two | 2 | reported | 2 |
+| [[events/2024-01 — Netmarble Metaverse World closure]] | 2024-01-22 | layoff | Netmarble | 3 | reported | 1 |
+| [[events/2024-Q2 — Netmarble union formation]] | 2024-05 | union-founding | Netmarble | 3 | verified | 2 |
+| [[events/2025-01 — Netmarble F&C layoffs (20)]] | 2025-01-02 | layoff | Netmarble | 3 | reported | 1 |
+| [[events/2023-12 — Saber New World Interactive layoffs]] | 2023-12-04 | layoff | Saber, Embracer | 2 | verified | 2 |
+| [[events/2024-03 — Gearbox post-sale layoffs]] | 2024-03-28 | layoff | Gearbox, Take-Two, Embracer | 2 | verified | 2 |
+| [[events/2024-01 — Lost Boys Interactive layoffs]] | 2024-01-12 | layoff | Gearbox, Embracer | 2 | verified | 1 |
+| [[events/2025-10 — Lost Boys Interactive second mass layoffs]] | 2025-10-24 | layoff | Gearbox, Take-Two | 2 | reported | 1 |
+| [[events/2024-01 — Playtika 10pct layoffs (~400)]] | 2024-01-11 | layoff | Playtika | 2 | verified | 1 |
+| [[events/2026-01 — Playtika 15pct layoffs (~500)]] | 2026-01-14 | layoff | Playtika | 2 | verified | 2 |
+| [[events/2025-01 — Moon Active first layoffs (dozens)]] | 2025-01-28 | layoff | Moon Active | 3 | reported | 2 |
+| [[events/2026-01 — Moon Active second layoffs (110)]] | 2026-01-27 | layoff | Moon Active | 3 | verified | 1 |
+| [[events/2024-12 — Lilith Games layoffs (~40)]] | 2024-12-02 | layoff | Lilith Games | 3 | reported | 3 |
+| [[events/2022-10 — Playrix Russia-Belarus exit]] | 2022-10-11 | layoff | Playrix | 3 | verified | 2 |
 
 ## Labour
 | Node | Type | Description |
@@ -108,16 +128,34 @@
 | [[sources/2024-11-06 — pcgamer-take-two-private-division-sold]] | PC Gamer | 2026-10-17 | http-200 | Private Division sold to unnamed buyer |
 | [[sources/2024-11-08 — gamesradar-take-two-shutters-studios]] | GamesRadar+ | 2026-10-17 | http-200 | Take-Two confirms Roll7 + Intercept closures |
 | [[sources/2026-05-22 — sec-take-two-fy2026-10k]] | SEC | 2026-10-17 | http-200 | Take-Two 10-K: 12,909 employees, $6.66B revenue |
+| [[sources/2024-01-23 — gamedeveloper-netmarble-metaverse-world]] | Game Developer | 2026-10-18 | http-200 (assumed) | Netmarble Metaverse World closure, ~70 laid off |
+| [[sources/2024-05-07 — mk-netmarble-union]] | MK | 2026-10-18 | http-200 (assumed) | Netmarble union formation, invisible restructuring |
+| [[sources/2025-01-07 — insider-netmarble-fc-layoffs]] | Insider Gaming | 2026-10-18 | http-200 (assumed) | Netmarble F&C ~20 layoffs Jan 2025 |
+| [[sources/2023-12-05 — gamesindustry-saber-nwi-layoffs]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Saber/NWI layoffs Dec 2023 |
+| [[sources/2023-12-06 — vgc-new-world-interactive-layoffs]] | VGC | 2026-10-18 | http-200 (assumed) | NWI layoffs Dec 2023 |
+| [[sources/2024-03-28 — gamedeveloper-gearbox-layoffs]] | Game Developer | 2026-10-18 | http-200 (assumed) | Gearbox post-sale layoffs Mar 2024 |
+| [[sources/2024-04-03 — gamesindustry-gearbox-layoffs]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Gearbox confirms layoffs after Embracer sale |
+| [[sources/2025-10-27 — aftermath-lost-boys-layoffs]] | Aftermath | 2026-10-18 | http-200 (assumed) | Lost Boys mass layoffs Oct 2025 |
+| [[sources/2025-08-16 — gameshub-gearbox-layoffs]] | GamesHub | 2026-10-18 | http-200 (assumed) | Gearbox post-Take-Two layoffs |
+| [[sources/2024-01-12 — verge-lost-boys-layoffs]] | The Verge | 2026-10-18 | http-200 (assumed) | Lost Boys layoffs Jan 2024 |
+| [[sources/2024-01-11 — gamesindustry-playtika-layoffs]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Playtika 10% layoff Jan 2024 |
+| [[sources/2026-01-14 — globes-playtika-layoffs]] | Globes | 2026-10-18 | http-200 (assumed) | Playtika 15% layoff Jan 2026 |
+| [[sources/2026-01-15 — gamesindustry-playtika-layoffs-2026]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Playtika 2026 layoff + AI strategy |
+| [[sources/2025-01-28 — gamesindustry-moon-active-layoffs]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Moon Active first layoffs Jan 2025 |
+| [[sources/2024-12-02 — gamesindustry-lilith-layoffs]] | GamesIndustry.biz | 2026-10-18 | http-200 (assumed) | Lilith Games ~40 layoffs Dec 2024 |
+| [[sources/2024-07-23 — gameworldobserver-china-layoffs-2023]] | Game World Observer | 2026-10-18 | http-200 (assumed) | China game company layoffs 2023; Lilith -238 |
+| [[sources/2022-10-11 — pocketgamer-playrix-exit]] | PocketGamer.biz | 2026-10-18 | http-200 (assumed) | Playrix Russia/Belarus exit Oct 2022 |
+| [[sources/2023-12-27 — gamedeveloper-playrix-exit]] | Game Developer | 2026-10-18 | http-200 (assumed) | Playrix confirms Russia/Belarus exit |
 
 ## Counts
-- orgs: 28
+- orgs: 35 (was 28)
 - people: 1
-- events: 9
+- events: 23 (was 9)
 - labour: 1 (industry-layoff-tracker)
-- sources: 25
+- sources: 44 (was 25)
 
 ## Priority distribution
-- T1 (P=1): 12 (Silver Lake, PIF, Affinity, a16z, EA, UVW-CWA, Respawn, BioWare, EA Sports, CPP, AZ pension, Take-Two)
-- T2 (P=2): 6 (CVC, EQT, Keywords, Jagex, Behaviour, Scopely)
-- T3 (P=3): 8 (NJ pension, Mythical, Bonfire, Haveli, Temasek, ESL FACEIT, Dream, Maxis)
-- T4 (P=4): 2 (Candivore, Omeda, Steer)
+- **T1 (P=1):** Microsoft Gaming, Sony, EA, Ubisoft, Epic, Riot, Take-Two, Embracer, Unity, Bungie, WB Games, Square Enix, Sega, Nintendo, Capcom, UVW-CWA, ZeniMax Workers, Activision QA, Blizzard CWA, Respawn, BioWare, EA Sports, Silver Lake, PIF, Affinity, a16z, CPP, AZ pension — 28
+- **T2 (P=2):** CVC, EQT, Keywords, Jagex, Behaviour, Scopely, Maxis, Gearbox — 8
+- **T3 (P=3):** NJ pension, Mythical, Bonfire, Haveli, Temasek, ESL FACEIT, Dream, Netmarble, Saber, Playtika, Moon Active — 11
+- **T4 (P=4):** Candivore, Omeda, Steer, Lilith Games, Playrix — 5
