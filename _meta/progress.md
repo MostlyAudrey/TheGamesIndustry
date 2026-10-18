@@ -9,29 +9,27 @@
 - **Batch 7 (Chinese/Big Tech/mobile depth):** 2026-10-18 — Tencent, NetEase, HoYoverse, Supercell, Moon Active, Lilith Games, Playrix, Playtika + Amazon/Google/Meta/Twitch gaming.
 - **Batch 8 (Korean/European publishers):** 2026-10-18 — Krafton, Nexon, NCSoft, Remedy, Techland, Creative Assembly, Frontier, Crytek, Pearl Abyss + Silver Lake LP reference.
 - **Batch 9 (remaining notable gaps):** 2026-10-18 — Netmarble, Gearbox, Saber, Playtika, Moon Active, Lilith, Playrix + Silver Lake LP source files (10).
+- **Batch 10 (French/Polish/indie publisher sweep):** 2026-10-18 — Quantic Dream, People Can Fly, Focus Entertainment, Annapurna Interactive, Devolver Digital.
 - **Repo live:** https://github.com/MostlyAudrey/TheGamesIndustry
 
 ## Counts
-- orgs: 78
+- orgs: 83
 - people: 4
-- events: 167
-- sources: 260
+- events: 169
+- sources: 271
 - capital: 11 (10 LP source files + LP reference)
 - queue items: pending
 
 ## Priority distribution
-- **T1 (P=1):** 48 nodes — all major publishers, platform holders, unions, capital anchors
-- **T2 (P=2):** 17 nodes — significant studios and mid-sized publishers
-- **T3 (P=3):** 9 nodes — notable but smaller/investment-only
-- **T4 (P=4):** 4 nodes — speculative / portfolio-only
+- **T1 (P=1):** 50 nodes
+- **T2 (P=2):** 17 nodes
+- **T3 (P=3):** 13 nodes
+- **T4 (P=4):** 4 nodes
 
 ## What's next
-1. **Quantic Dream** — NetEase acquisition 2022; Star Wars Eclipse; layoffs?
-2. **People Can Fly** — Outriders; project cancellations; union?
-3. **Focus Entertainment / Annapurna Interactive / Devolver Digital** — AA publisher labor
-4. **Roblox Corporation** — platform labor / union organizing
-5. **Unity depth** — 1,800 layoffs; runtime fee; CEO cycle
-6. **Warner Bros. Games** — depth
-7. **Nintendo depth** — labor record expansion
-8. **Discord** — 170 layoffs Jan 2024
-9. **Square Enix / Sega depth**
+1. Unity depth — 1,800 layoffs; runtime fee; CEO cycle
+2. Warner Bros. Games — depth
+3. Nintendo depth — labor record expansion
+4. Discord — 170 layoffs Jan 2024
+5. Square Enix / Sega depth
+6. Roblox Corporation

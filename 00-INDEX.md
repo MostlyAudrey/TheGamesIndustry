@@ -2,7 +2,7 @@
 
 > Machine-readable registry of every entity in the vault. The "database." Updated every batch.
 > Sorted by priority (1 = build first). Confidence + source count per node.
-> Last updated: 2026-10-18 (batch 9 — mobile/Israeli/Chinese publishers, Silver Lake LP sources).
+> Last updated: 2026-10-18 (batch 10 — French/Polish/indie publisher sweep + final gaps).
 
 ## How to read
 - **P** = priority (1 = build first). **Conf** = verified / reported / single-source / speculation.
@@ -105,21 +105,17 @@
 - Total: 167 event nodes — see [[events/]] directory
 
 ## Sources
-- Total: 260 source nodes — see [[sources/]] directory
+- Total: 271 source nodes — see [[sources/]] directory
 
 ## Counts
-- orgs: 78
+- orgs: 83
 - people: 4
-- events: 167
-- sources: 260
+- events: 169
+- sources: 271
 - capital: 11
 
 ## Priority distribution
-- **T1 (P=1):** Microsoft Gaming, Sony, EA, Ubisoft, Epic, Riot, Take-Two, Embracer, Tencent, NetEase, HoYoverse, Nintendo, Square Enix, Sega, Capcom, Kadokawa, FromSoftware, Bandai Namco, WB Games, Bungie, Activision, Blizzard, Bethesda, Unity, UVW-CWA, ZeniMax Workers, Activision QA, Blizzard CWA, Silver Lake, PIF, Affinity, a16z, CPP, CVC, EQT, Temasek, Meta Games, Amazon Games, Twitch, Google, Krafton, Nexon, NCSoft, Respawn, BioWare, Maxis, EA Sports, Supercell, Riot, Embracer — 48
+- **T1 (P=1):** Microsoft Gaming, Sony, EA, Ubisoft, Epic, Riot, Take-Two, Embracer, Tencent, NetEase, HoYoverse, Nintendo, Square Enix, Sega, Capcom, Kadokawa, FromSoftware, Bandai Namco, WB Games, Bungie, Activision, Blizzard, Bethesda, Unity, UVW-CWA, ZeniMax Workers, Activision QA, Blizzard CWA, Silver Lake, PIF, Affinity, a16z, CPP, CVC, EQT, Temasek, Meta Games, Amazon Games, Twitch, Google, Krafton, Nexon, NCSoft, Respawn, BioWare, Maxis, EA Sports, Supercell, Embracer — 50
 - **T2 (P=2):** CD Projekt, Remedy, Techland, Paradox, Creative Assembly, Crytek, Frontier, Pearl Abyss, Gearbox, Jagex, Behaviour, Keywords, Scopely, ESL FACEIT, Konami, Valve, Saber — 17
-- **T3 (P=3):** Netmarble, Playtika, Moon Active, Lilith Games, Playrix, Dream Games, Mythical, Haveli, Temasek — 9
+- **T3 (P=3):** Netmarble, Playtika, Moon Active, Lilith Games, Playrix, Quantic Dream, People Can Fly, Focus Entertainment, Annapurna Interactive, Devolver Digital, Dream Games, Mythical, Haveli — 13
 - **T4 (P=4):** Candivore, Omeda Studios, Steer Studios, Bonfire Studios — 4
-
-## Todo (next batch)
-- Quantic Dream, People Can Fly, Focus Entertainment, Annapurna Interactive, Devolver Digital, Roblox Corporation
-- Unity depth, Bungie, WB Games depth, Nintendo depth
