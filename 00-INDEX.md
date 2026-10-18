@@ -2,7 +2,7 @@
 
 > Machine-readable registry of every entity in the vault. The "database." Updated every batch.
 > Sorted by priority (1 = build first). Confidence + source count per node.
-> Last updated: 2026-10-18 (batch 5 — remaining major publishers and engine companies).
+> Last updated: 2026-10-18 (batch 6 — legacy publishers, Japanese majors, platform holders).
 
 ## How to read
 - **P** = priority (1 = build first). **Conf** = verified / reported / single-source / speculation.
