@@ -27,7 +27,10 @@ employees: "7,317 (Nintendo Co., Ltd. consolidated, as of March 2025, [[sources/
 key_subsidiaries:
   - "Nintendo of America (NOA) — Redmond, WA; sales, marketing, QA, localization"
   - "Nintendo of Europe"
-  - "Nintendo EPD (Entertainment Planning & Development — Japan)"
+  - "[[orgs/Nintendo EPD]] (Entertainment Planning & Development — Japan)"
+  - "[[orgs/Monolith Soft]] (Tokyo/Kyoto — Xenoblade series; wholly owned since Dec 2024)"
+  - "[[orgs/Retro Studios]] (Austin, TX — Metroid Prime, Donkey Kong Country)"
+  - "[[orgs/Next Level Games]] (Vancouver, Canada — Luigi's Mansion 3; acquired 2021)"
   - "Nintendo Software Technology (NST — Redmond, WA)"
   - "Nintendo European Research & Development (NERD — Paris)"
 labour:
@@ -49,12 +52,18 @@ labour:
     - "US: 5.1% turnover rate; average employee tenure ~10 years. 87% report regular career growth conversations (as of 2025, [[sources/2025-07-22 — thegamer-nintendo-staff-retention]])."
     - "Gender balance: Japan — 2,270 male, 692 female employees. Australia — 50 male, 49 female (near parity). Near 100% return rate after parental leave (as of 2025, [[sources/2025-07-22 — thegamer-nintendo-staff-retention]])."
 key_decisions:
+  - "2017-03: Nintendo Switch launches worldwide — becomes third best-selling console of all time"
+  - "2021-01: Acquires Next Level Games (Vancouver, Canada)"
+  - "2021-10: Switch OLED model launches"
   - "2022-04: Responded to NLRB complaint; denied union-busting allegations"
   - "2022-08: Opened investigation after Kotaku report on sexism, harassment at NOA"
   - "2022-10: Settled NLRB complaint with MacKenzie Clifton for $26,000"
+  - "2023-05: Tears of the Kingdom sells 10M+ in 3 days — fastest-selling Zelda"
   - "2024-03: Restructured NOA Product Testing; ~100+ contractor layoffs; created 'significant number' of full-time testing roles"
+  - "2024-12: Acquires remaining Monolith Soft shares — becomes 100% owner"
   - "2025-2026: Facing new NLRB complaints via Teksystems (filed Dec 2025/Jan 2026)"
   - "2025-2026: Concerns raised about outsourcing customer service ahead of Switch 2 holiday season"
+  - "2026: Switch 2 launches? (TBD) — successor platform expected to follow Switch's 146M+ unit sales"
 ---
 
 # Nintendo
@@ -91,6 +100,33 @@ key_decisions:
 4. **New NLRB complaints (2025-2026):** Fresh charges signal continued organizing pressure at NOA. The involvement of a different contracting firm (Teksystems, vs. Aston Carter in 2022) suggests the labor issues are structural, not tied to a single vendor.
 
 **Context:** Nintendo's labor experience is the mirror opposite of Sony and Microsoft. While both platform holders conducted mass layoffs (Sony: ~900 in Feb 2024; Microsoft: 6,100+ between Jan 2024 and Jul 2026), Nintendo made zero permanent staff cuts. However, reliance on contract workers creates a parallel workforce without the same protections.
+
+## First-party studios
+
+| Studio | Location | Employees | Notable franchises | Acquired/Founded |
+|---|---|---|---|---|
+| [[orgs/Nintendo EPD]] | Kyoto/Tokyo, Japan | ~3,000+ | Mario, Zelda, Splatoon, Animal Crossing | 2015 (internal merger) |
+| [[orgs/Retro Studios]] | Austin, TX, USA | ~200 | Metroid Prime, Donkey Kong Country | 1998 (Nintendo-owned 2002) |
+| [[orgs/Monolith Soft]] | Tokyo/Kyoto, Japan | 344 | Xenoblade Chronicles | 1999 (Nintendo-owned 2007; 100% 2024) |
+| [[orgs/Next Level Games]] | Vancouver, BC, Canada | 154 | Luigi's Mansion, Mario Strikers | 2002 (acquired 2021) |
+
+## Switch platform story
+
+Nintendo's hardware trajectory from 2017 to 2026 is a key factor in its labor stability:
+
+- **Nintendo Switch** (launched March 3, 2017) — sold 146M+ units lifetime, third best-selling console ever [[events/2017-03-03 — Nintendo Switch launch]]
+- **Switch OLED Model** (launched October 8, 2021) — mid-generation refresh extended sales momentum
+- **The Legend of Zelda: Tears of the Kingdom** (May 12, 2023) — 10M+ in 3 days; fastest-selling Zelda [[events/2021-10-08 — Nintendo Switch OLED launch + TotK 2023]]
+- Sustained profitability throughout the 2022-2026 industry downturn enabled Nintendo to maintain zero permanent layoffs
+
+## Labor fact-check
+
+See detailed analysis at [[labour/nintendo-labor-fact-check]] for:
+- Japanese labor law's four criteria for layoffs
+- Nintendo's 1.9% Japan turnover vs 5.1% US turnover
+- Salary comparison: JP vs US/UK peers
+- Benefits analysis
+- Organizing outlook
 
 ## Scope note
 Nintendo Co., Ltd. is a Japanese publisher outside the US/Canada primary scope of Project Gamecraft. This node is included because Nintendo of America (Redmond, WA) is a US subsidiary with documented labor events within US jurisdiction. Japanese-side labor data is captured for context.

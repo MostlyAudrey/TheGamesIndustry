@@ -2,7 +2,7 @@
 
 > Machine-readable registry of every entity in the vault. The "database." Updated every batch.
 > Sorted by priority (1 = build first). Confidence + source count per node.
-> Last updated: 2026-10-18 (batch 10 — French/Polish/indie publisher sweep + final gaps).
+> Last updated: 2026-10-18 (batch 11 — Japanese publisher + studio depth sweep).
 
 ## How to read
 - **P** = priority (1 = build first). **Conf** = verified / reported / single-source / speculation.
@@ -23,12 +23,15 @@
 | [[orgs/NetEase]] | publisher | CN | 1 | verified | 7 | Marvel Rivals cuts; CEO restructuring; headcount 29k→25k |
 | [[orgs/HoYoverse (miHoYo)]] | publisher | CN | 1 | verified | 5 | No confirmed layoffs; 996 culture; hiring collapse 86→15/mo |
 | [[orgs/Nintendo]] | publisher | JP | 1 | verified | 3 | Historically stable; no mass layoffs; Switch 2 transition |
+| [[orgs/Square Enix Holdings]] | holding-company | JP | 2 | reported | 5 | Parent of Square Enix operating entity; ¥402.5B FY2025; HD game difficulties post-2023 |
 | [[orgs/Square Enix]] | publisher | JP | 1 | verified | 4 | Restructuring 2024; Western studio divestitures |
+| [[orgs/Sega Sammy Holdings]] | holding-company | JP | 2 | reported | 4 | Parent of Sega Corp; ¥487.5B FY2025; pachinko/entertainment conglomerate |
 | [[orgs/Sega]] | publisher | JP | 1 | verified | 5 | 240 layoffs 2024; Creative Assembly 43% headcount collapse |
+| [[orgs/Bandai Namco Entertainment]] | publisher | JP | 2 | reported | 2 | Operational gaming arm of Bandai Namco Holdings; ~1,472 employees; 2024 oidashi beya scandal |
+| [[orgs/Bandai Namco]] | publisher | JP | 1 | verified | 4 | 1,000+ transferred/retired Oct 2024; studio restructuring |
 | [[orgs/Capcom]] | publisher | JP | 1 | verified | 2 | Stable; no mass layoffs; moderate pay |
 | [[orgs/Kadokawa Corporation]] | media-conglomerate | JP | 1 | verified | 10 | Sony largest shareholder; 154 early retirements; JFTC violation |
 | [[orgs/FromSoftware]] | studio | JP | 1 | verified | 8 | Dept-dependent crunch; 11.8% salary hike 2024; no union |
-| [[orgs/Bandai Namco]] | publisher | JP | 1 | verified | 4 | 1,000+ transferred/retired Oct 2024; studio restructuring |
 | [[orgs/Warner Bros. Games]] | publisher | US | 1 | verified | 9 | $300M+ write-downs; 300+ layoffs; Multiplayer shutdown |
 | [[orgs/Bungie]] | studio | US | 1 | verified | 5 | 220 layoffs Oct 2024 (17%); Sony acquisition aftermath |
 | [[orgs/Activision Publishing]] | publisher | US | 1 | verified | 5 | 1,500+ layoffs 2024; Raven union; Microsoft umbrella |
@@ -92,6 +95,10 @@
 | [[orgs/Scopely]] | publisher | US | 2 | verified | 2 | Temasek-backed; Monopoly Go |
 | [[orgs/ESL FACEIT Group]] | esports | DE | 3 | verified | 2 | Saudi-backed; restructuring 2024 |
 | [[orgs/Konami]] | publisher | JP | 2 | verified | 2 | Stable; mobile focus |
+| [[orgs/Atlus]] | studio | JP | 3 | reported | 0 | Persona/SMT developer; Sega subsidiary; 15% salary increase 2024; no union |
+| [[orgs/Sonic Team]] | studio | JP/US | 3 | reported | 0 | Sonic the Hedgehog developer; Sega internal div; ~50-150 emp; no union |
+| [[orgs/Ryu Ga Gotoku Studio]] | studio | JP | 3 | reported | 0 | Yakuza/Like a Dragon developer; Sega internal div; ~300 emp; no union |
+| [[orgs/PlatinumGames]] | studio | JP | 3 | reported | 2 | Bayonetta/Nier; talent exodus 2023-2025; leadership departures; no union |
 | [[orgs/Tango Gameworks]] | studio | JP | 2 | verified | 4 | Saved by Krafton Aug 2024; ~50 of 105 staff back; no union |
 | [[orgs/Playtika]] | publisher | IL | 3 | reported | 3 | 15% layoffs Jan 2026; 10% Jan 2024 |
 | [[orgs/Moon Active]] | publisher | IL | 3 | reported | 2 | Two layoff rounds (2025, 2026); 110 in 2026 |
@@ -118,20 +125,21 @@
 | [[people/Tero Virtala]] | CEO Remedy | 2 | verified | 1 | Stepped down Oct 2025 |
 
 ## Events
-- Total: 179 event nodes — see [[events/]] directory
+- Total: 183 event nodes — see [[events/]] directory
 
 ## Sources
-- Total: 291 source nodes — see [[sources/]] directory
+- Total: 297 source nodes — see [[sources/]] directory
 
 ## Counts
-- orgs: 99
+- orgs: 106
 - people: 4
-- events: 179
-- sources: 291
+- events: 183
+- sources: 297
 - capital: 11
 
 ## Priority distribution
 - **T1 (P=1):** Microsoft Gaming, Sony, EA, Ubisoft, Epic, Riot, Take-Two, Embracer, Tencent, NetEase, HoYoverse, Nintendo, Square Enix, Sega, Capcom, Kadokawa, FromSoftware, Bandai Namco, WB Games, Bungie, Activision, Blizzard, Bethesda, Halo Studios, The Coalition, Rare Ltd, Turn 10 Studios, Undead Labs, Unity, UVW-CWA, ZeniMax Workers, Activision QA, Blizzard CWA, Silver Lake, PIF, Affinity, a16z, CPP, CVC, EQT, Temasek, Meta Games, Amazon Games, Twitch, Google, Krafton, Nexon, NCSoft, Respawn, BioWare, Maxis, EA Sports, Supercell, Embracer — 55
 - **T2 (P=2):** CD Projekt, Remedy, Techland, Paradox, Creative Assembly, Crytek, Frontier, Pearl Abyss, Double Fine, inXile, Ninja Theory, Obsidian, Playground Games, Gearbox, id Software, MachineGames, Arkane Studios, ZeniMax Online Studios, Tango Gameworks, Jagex, Behaviour, Keywords, Scopely, ESL FACEIT, Konami, Valve, Saber — 27
-- **T3 (P=3):** Netmarble, Playtika, Moon Active, Lilith Games, Playrix, Compulsion Games, Quantic Dream, People Can Fly, Focus Entertainment, Annapurna Interactive, Devolver Digital, Dream Games, Mythical, Haveli — 14
+- **T2 (P=2):** CD Projekt, Remedy, Techland, Paradox, Creative Assembly, Crytek, Frontier, Pearl Abyss, Double Fine, inXile, Ninja Theory, Obsidian, Playground Games, Gearbox, id Software, MachineGames, Arkane Studios, ZeniMax Online Studios, Tango Gameworks, Jagex, Behaviour, Keywords, Scopely, ESL FACEIT, Konami, Valve, Saber, Square Enix Holdings, Sega Sammy Holdings, Bandai Namco Entertainment — 30
+- **T3 (P=3):** Netmarble, Playtika, Moon Active, Lilith Games, Playrix, Compulsion Games, Quantic Dream, People Can Fly, Focus Entertainment, Annapurna Interactive, Devolver Digital, Dream Games, Mythical, Haveli, Atlus, Sonic Team, Ryu Ga Gotoku Studio, PlatinumGames — 18
 - **T4 (P=4):** Candivore, Omeda Studios, Steer Studios, Bonfire Studios — 4
