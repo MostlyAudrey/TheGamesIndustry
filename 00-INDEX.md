@@ -2,7 +2,7 @@
 
 > Machine-readable registry of every entity in the vault. The "database." Updated every batch.
 > Sorted by priority (1 = build first). Confidence + source count per node.
-> Last updated: 2026-10-17 (batch 4 — Take-Two Interactive labor layer).
+> Last updated: 2026-10-18 (batch 5 — remaining major publishers and engine companies).
 
 ## How to read
 - **P** = priority (1 = build first). **Conf** = verified / reported / single-source / speculation.
@@ -44,6 +44,13 @@
 | [[orgs/Bonfire Studios]] | studio | US | 3 | verified | 1 | Irvine CA; a16z; 51-200 emp |
 | [[orgs/Haveli Investments]] | pe-fund | US | 3 | verified | 1 | Austin TX gaming fund |
 | [[orgs/Temasek]] | sovereign-wealth-LP | SG | 3 | verified | 1 | Keywords LP |
+| [[orgs/Unity Technologies]] | engine/platform | US | 1 | verified | 8 | 3,200+ layoffs; Runtime Fee crisis; CEO cycle |
+| [[orgs/Bungie]] | studio | US | 1 | verified | 6 | 612+ layoffs; Sony acquisition; no union; Marathon faded |
+| [[orgs/Warner Bros. Games]] | publisher/division | US | 1 | verified | 10 | $300M writedown; 3 studios closed Feb 2025 (Monolith, Player First, WB SD) |
+| [[orgs/Square Enix]] | publisher | JP+global | 1 | verified | 4 | Western retreat; 137+ UK cuts; no union; AI pivot |
+| [[orgs/Sega]] | publisher | JP+global | 1 | verified | 6 | AEGIS-CWA 200+ members (largest multi-dept game union in US); 240 EU layoffs |
+| [[orgs/Nintendo]] | publisher | JP+global | 1 | verified | 3 | Zero permanent layoffs JP; ~100+ NOA contractor cuts; Japanese labor law shield |
+| [[orgs/Capcom]] | publisher | JP+global | 1 | verified | 3 | Zero permanent layoffs JP; salary raises; SAG-AFTRA dispute Mar 2026 |
 | [[orgs/ESL FACEIT Group]] | esports | US/CA+EU | 3 | verified | 1 | Savvy platform |
 | [[orgs/Dream Games]] | studio (mobile) | TR+US | 3 | reported | 0 | CVC ~$5B (2025) — source to archive |
 | [[orgs/Candivore]] | studio (mobile) | IL | 4 | verified | 1 | Haveli portfolio |
