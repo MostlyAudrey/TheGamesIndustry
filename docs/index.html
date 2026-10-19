@@ -24,7 +24,6 @@
 }
 html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); overflow: hidden; }
 
-/* Layout */
 #app { display: flex; flex-direction: column; height: 100vh; }
 
 /* Header */
@@ -48,16 +47,13 @@ header h1 span { color: var(--text-dim); font-weight: 400; }
 .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 #stats { font-size: 12px; color: var(--text-dim); white-space: nowrap; }
 
-/* Main content area */
 #main { display: flex; flex: 1; overflow: hidden; }
 
-/* Graph */
 #graph-wrap { flex: 1; position: relative; }
 #graph { width: 100%; height: 100%; }
 #graph svg { width: 100%; height: 100%; }
 .loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--text-dim); font-size: 16px; }
 
-/* Tooltip */
 #tooltip { position: absolute; display: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 12px; font-size: 13px; max-width: 250px; pointer-events: none; z-index: 50; box-shadow: var(--shadow); }
 #tooltip.show { display: block; }
 #tooltip .tt-name { font-weight: 600; font-size: 14px; }
@@ -66,8 +62,11 @@ header h1 span { color: var(--text-dim); font-weight: 400; }
 /* Detail Panel */
 #detail { width: 0; overflow: hidden; background: var(--surface); border-left: 1px solid var(--border); transition: width 0.2s; flex-shrink: 0; }
 #detail.open { width: 380px; }
-#detail-inner { width: 380px; height: 100%; overflow-y: auto; padding: 20px; }
-#detail-inner h2 { font-size: 18px; margin-bottom: 4px; }
+#detail-inner { width: 380px; height: 100%; overflow-y: auto; padding: 20px; padding-top: 16px; position: relative; }
+.detail-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.detail-top h2 { font-size: 18px; margin: 0; flex: 1; }
+#detail-close { flex-shrink: 0; background: none; border: 1px solid var(--border); color: var(--text-dim); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; white-space: nowrap; }
+#detail-close:hover { color: var(--text); border-color: var(--accent); }
 .detail-meta { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
 .detail-meta span { background: var(--surface2); padding: 2px 8px; border-radius: 4px; }
 .detail-summary { font-size: 13px; line-height: 1.5; margin: 12px 0; color: var(--text); }
@@ -76,18 +75,12 @@ header h1 span { color: var(--text-dim); font-weight: 400; }
 .detail-link { display: block; padding: 6px 10px; margin-bottom: 4px; background: var(--surface2); border-radius: 4px; cursor: pointer; font-size: 13px; transition: background 0.15s; }
 .detail-link:hover { background: var(--border); }
 .detail-link .link-type { font-size: 11px; color: var(--text-dim); }
-#detail-close { position: absolute; top: 20px; right: 20px; background: none; border: 1px solid var(--border); color: var(--text); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
 
-/* Legend */
 #legend { position: absolute; bottom: 16px; right: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; font-size: 11px; line-height: 1.6; max-width: 160px; z-index: 10; }
 #legend .legend-title { font-weight: 600; margin-bottom: 4px; font-size: 11px; color: var(--text-dim); }
 .legend-item { display: flex; align-items: center; gap: 6px; }
 .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 
-/* Controls overlay */
-#controls { position: absolute; bottom: 16px; left: 16px; display: flex; gap: 8px; z-index: 10; }
-
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
@@ -116,7 +109,7 @@ header h1 span { color: var(--text-dim); font-weight: 400; }
       <button class="filter-btn" data-type="event">Events</button>
     </div>
   </header>
-  
+
   <div id="main">
     <div id="graph-wrap">
       <div class="loading">Loading graph data...</div>
@@ -167,7 +160,7 @@ function getColor(node) {
   return COLORS.default;
 }
 
-// Colors for critical edge types
+// Colors for edge types
 const EDGE_COLORS = {
   'portfolio-of': '#ff6b6b',
   'lp-in': '#ffa502',
@@ -175,25 +168,25 @@ const EDGE_COLORS = {
 };
 
 // ====== State ======
-let graphData = null;
 let allNodes = [];
 let allEdges = [];
 let activeFilter = 'all';
 let selectedNode = null;
 let highlightNode = null;
 let simulation = null;
-let svg, link, node, label;
+let svg, linkG, nodeG, labelG;
 
 // ====== Load data ======
 async function loadData() {
   try {
     const resp = await fetch('data/graph.json');
-    graphData = await resp.json();
+    const graphData = await resp.json();
     allNodes = graphData.nodes;
     allEdges = graphData.edges;
     document.querySelector('.loading').style.display = 'none';
     init();
     updateStats();
+    buildSearchIndex();
   } catch(e) {
     document.querySelector('.loading').textContent = 'Error loading graph data: ' + e.message;
   }
@@ -204,8 +197,7 @@ function init() {
   const wrap = document.getElementById('graph-wrap');
   const width = wrap.clientWidth;
   const height = wrap.clientHeight;
-  globalWidth = width; globalHeight = height;
-  
+
   svg = d3.select('#graph')
     .append('svg')
     .attr('width', width)
@@ -213,7 +205,8 @@ function init() {
     .call(d3.zoom().scaleExtent([0.1, 4]).on('zoom', (event) => {
       svg.select('g').attr('transform', event.transform);
     }));
-  
+
+  // Arrow marker
   svg.append('defs').append('marker')
     .attr('id', 'arrowhead')
     .attr('viewBox', '0 -5 10 10')
@@ -228,8 +221,7 @@ function init() {
 
   renderGraph();
   buildLegend();
-  
-  // Resize handler
+
   window.addEventListener('resize', () => {
     const w = wrap.clientWidth;
     const h = wrap.clientHeight;
@@ -237,22 +229,18 @@ function init() {
   });
 }
 
-// ====== Build findex ======
-function buildIndex(nodes) {
-  const idx = [];
-  for (const n of nodes) {
-    idx.push({
-      id: n.id,
-      name: n.name,
-      type: n.displayType || n.type,
-      dir: n.dir,
-      priority: n.priority,
-      sector: n.sector,
-      region: n.region,
-      role: n.role,
-    });
-  }
-  return idx;
+// ====== Search index ======
+let searchIndex = [];
+function buildSearchIndex() {
+  searchIndex = allNodes.map(n => ({
+    id: n.id,
+    name: n.name,
+    type: n.displayType || n.type,
+    dir: n.dir,
+    sector: n.sector,
+    region: n.region,
+    role: n.role,
+  }));
 }
 
 // ====== Render graph ======
@@ -261,18 +249,25 @@ function renderGraph() {
   const width = wrap.clientWidth;
   const height = wrap.clientHeight;
 
-  // Filter nodes and edges
-  let visibleNodeIds, visibleEdgeIds;
-  
+  // ---- Filter logic ----
+  // Map short filter names to actual dir values in the data
+  const filterDirMap = { 'org': 'orgs', 'person': 'people', 'event': 'events' };
+  let visibleNodeIds;
+
   if (activeFilter === 'all') {
     visibleNodeIds = new Set(allNodes.map(n => n.id));
   } else {
-    visibleNodeIds = new Set(
-      allNodes.filter(n => n.type === activeFilter || n.dir === activeFilter).map(n => n.id)
-    );
+    const dirName = filterDirMap[activeFilter] || activeFilter;
+    const typeNodes = allNodes.filter(n => n.dir === dirName);
+    visibleNodeIds = new Set(typeNodes.map(n => n.id));
+    // Expand to include connected nodes so edges are visible
+    for (const e of allEdges) {
+      if (visibleNodeIds.has(e.source)) visibleNodeIds.add(e.target);
+      if (visibleNodeIds.has(e.target)) visibleNodeIds.add(e.source);
+    }
   }
-  
-  // Also include connected nodes if we have a selected/highlighted node
+
+  // If a specific node is selected, show only its neighborhood within current filter
   if (highlightNode) {
     const connected = new Set([highlightNode.id]);
     for (const e of allEdges) {
@@ -281,43 +276,42 @@ function renderGraph() {
         connected.add(e.target);
       }
     }
-    // Intersect with current filter
     visibleNodeIds = new Set([...visibleNodeIds].filter(id => connected.has(id)));
   }
-  
+
   const filteredNodes = allNodes.filter(n => visibleNodeIds.has(n.id));
-  const filteredEdges = allEdges.filter(e => 
+  const filteredEdges = allEdges.filter(e =>
     visibleNodeIds.has(e.source) && visibleNodeIds.has(e.target)
   );
-  
-  // Build simulation
+
+  // ---- Build simulation ----
   if (simulation) simulation.stop();
-  
-  const nodeData = filteredNodes.map(n => ({...n})); globalNodeData = nodeData;
+
+  const nodeData = filteredNodes.map(n => ({ ...n }));
   const nodeMap = {};
   nodeData.forEach((n, i) => nodeMap[n.id] = i);
-  
+
   const linkData = filteredEdges.map(e => ({
     source: nodeMap[e.source],
     target: nodeMap[e.target],
     type: e.type,
   })).filter(l => l.source !== undefined && l.target !== undefined);
-  
-  const g = svg.select('g');
-  if (g.empty()) {
-    svg.append('g');
+
+  // Ensure a <g> exists
+  let graphG = svg.select('g');
+  if (graphG.empty()) {
+    graphG = svg.append('g');
   }
-  const graphG = svg.select('g');
   graphG.selectAll('*').remove();
-  
+
   simulation = d3.forceSimulation(nodeData)
     .force('link', d3.forceLink(linkData).id(d => d.id).distance(80))
     .force('charge', d3.forceManyBody().strength(-200))
     .force('center', d3.forceCenter(width / 2, height / 2))
     .force('collision', d3.forceCollide().radius(20));
-  
-  // Links
-  link = graphG.append('g')
+
+  // ---- Links ----
+  linkG = graphG.append('g')
     .selectAll('line')
     .data(linkData)
     .join('line')
@@ -325,9 +319,9 @@ function renderGraph() {
     .attr('stroke-width', d => d.type === 'portfolio-of' || d.type === 'lp-in' ? 2 : 0.8)
     .attr('stroke-opacity', d => d.type === 'portfolio-of' || d.type === 'lp-in' ? 0.8 : 0.3)
     .attr('marker-end', d => d.type === 'portfolio-of' || d.type === 'lp-in' ? 'url(#arrowhead)' : null);
-  
-  // Nodes
-  node = graphG.append('g')
+
+  // ---- Nodes ----
+  nodeG = graphG.append('g')
     .selectAll('circle')
     .data(nodeData)
     .join('circle')
@@ -360,9 +354,9 @@ function renderGraph() {
         if (!event.active) simulation.alphaTarget(0);
         d.fx = null; d.fy = null;
       }));
-  
-  // Labels (for larger nodes)
-  label = graphG.append('g')
+
+  // ---- Labels ----
+  labelG = graphG.append('g')
     .selectAll('text')
     .data(nodeData.filter(d => d.dir !== 'sources' && d.dir !== 'events'))
     .join('text')
@@ -373,30 +367,27 @@ function renderGraph() {
     .attr('fill', 'var(--text-dim)')
     .style('pointer-events', 'none')
     .style('font-family', 'system-ui, sans-serif');
-  
-  // Simulation tick
+
+  // ---- Tick ----
   simulation.on('tick', () => {
-    link
+    linkG
       .attr('x1', d => d.source.x)
       .attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x)
       .attr('y2', d => d.target.y);
-    node
+    nodeG
       .attr('cx', d => d.x)
       .attr('cy', d => d.y);
-    label
+    labelG
       .attr('x', d => d.x)
       .attr('y', d => d.y);
   });
-  
+
   // Click background to deselect
-  svg.on('click', () => {
-    selectNode(null);
-  });
+  svg.on('click', () => selectNode(null));
 }
 
 // ====== Search ======
-let searchIndex = [];
 document.getElementById('search').addEventListener('input', function() {
   const q = this.value.toLowerCase().trim();
   const results = document.getElementById('search-results');
@@ -404,21 +395,25 @@ document.getElementById('search').addEventListener('input', function() {
     results.classList.remove('show');
     return;
   }
-  
-  const matches = searchIndex.filter(e => 
+
+  const matches = searchIndex.filter(e =>
     e.name.toLowerCase().includes(q) ||
     (e.role && e.role.toLowerCase().includes(q))
   ).slice(0, 20);
-  
-  results.innerHTML = matches.map(m => `
-    <div class="search-item" data-id="${m.id}">
-      <div class="name">${highlightMatch(m.name, q)}</div>
-      <div class="meta">${m.type}${m.sector ? ' · ' + m.sector : ''}${m.region ? ' · ' + m.region : ''}</div>
-    </div>
-  `).join('');
-  
+
+  results.innerHTML = matches.map(m => {
+    const idx = m.name.toLowerCase().indexOf(q);
+    const display = idx >= 0
+      ? m.name.substring(0, idx) + '<strong>' + m.name.substring(idx, idx + q.length) + '</strong>' + m.name.substring(idx + q.length)
+      : m.name;
+    return '<div class="search-item" data-id="' + m.id + '">' +
+      '<div class="name">' + display + '</div>' +
+      '<div class="meta">' + m.type + (m.sector ? ' · ' + m.sector : '') + (m.region ? ' · ' + m.region : '') + '</div>' +
+      '</div>';
+  }).join('');
+
   results.classList.toggle('show', matches.length > 0);
-  
+
   results.querySelectorAll('.search-item').forEach(el => {
     el.addEventListener('click', () => {
       const id = el.dataset.id;
@@ -427,39 +422,17 @@ document.getElementById('search').addEventListener('input', function() {
         document.getElementById('search').value = '';
         results.classList.remove('show');
         selectNode(node);
-        // Zoom to node via centering
-        if (simulation && nodeData && nodeData.length > 0) {
-          const idx = nodeData.findIndex(n => n && n.id === id);
-          if (idx >= 0) {
-            const nd = nodeData[idx];
-            if (nd && nd.x != null) {
-              const wrap = document.getElementById('graph-wrap');
-              const w = wrap.clientWidth;
-              const h = wrap.clientHeight;
-              const transform = d3.zoomIdentity.translate(w/2 - nd.x*4, h/2 - nd.y*4).scale(4);
-              svg.transition().duration(500).call(d3.zoom().transform, transform);
-            }
-          }
-        }
       }
     });
   });
 });
 
-function highlightMatch(text, query) {
-  const idx = text.toLowerCase().indexOf(query);
-  if (idx === -1) return text;
-  return `${text.substring(0, idx)}<strong>${text.substring(idx, idx + query.length)}</strong>${text.substring(idx + query.length)}`;
-}
-
 // ====== Tooltip ======
 function showTooltip(event, d) {
   const tip = document.getElementById('tooltip');
-  tip.innerHTML = `
-    <div class="tt-name">${d.name}</div>
-    <div class="tt-type">${d.displayType || d.type}${d.region ? ' · ' + d.region : ''}${d.role ? ' · ' + d.role : ''}</div>
-    ${d.summary ? `<div style="margin-top:4px;font-size:12px;color:var(--text-dim)">${d.summary.substring(0, 120)}${d.summary.length > 120 ? '…' : ''}</div>` : ''}
-  `;
+  tip.innerHTML = '<div class="tt-name">' + d.name + '</div>' +
+    '<div class="tt-type">' + (d.displayType || d.type) + (d.region ? ' · ' + d.region : '') + (d.role ? ' · ' + d.role : '') + '</div>' +
+    (d.summary ? '<div style="margin-top:4px;font-size:12px;color:var(--text-dim)">' + d.summary.substring(0, 120) + (d.summary.length > 120 ? '…' : '') + '</div>' : '');
   const rect = event.target.getBoundingClientRect();
   const x = rect.left + rect.width / 2;
   const y = rect.top - 8;
@@ -477,157 +450,170 @@ function selectNode(d) {
   selectedNode = d;
   const panel = document.getElementById('detail');
   const inner = document.getElementById('detail-inner');
-  
+
   if (!d) {
     panel.classList.remove('open');
     highlightNode = null;
     renderGraph();
     return;
   }
-  
-  // Store current allNodes reference for callbacks
-  const currentNodes = allNodes;
-  const currentEdges = allEdges;
-  
+
   panel.classList.add('open');
-  
-  // Build connected edges info
+
+  // Connections
   const connectedEdges = allEdges.filter(e => e.source === d.id || e.target === d.id);
   const connectedNodeIds = new Set();
   connectedEdges.forEach(e => { connectedNodeIds.add(e.source); connectedNodeIds.add(e.target); });
   connectedNodeIds.delete(d.id);
   const connectedNodes = [...connectedNodeIds].map(id => allNodes.find(n => n.id === id)).filter(Boolean);
-  
-  // Highlight connected in graph
+
+  // Highlight neighborhood
   highlightNode = d;
   renderGraph();
-  
-  // Build detail content
-  let html = `<button id="detail-close" onclick="selectNode(null)">✕ Close</button>`;
-  html += `<h2>${d.name}</h2>`;
-  
-  html += `<div class="detail-meta">`;
-  html += `<span>${d.displayType || d.type}</span>`;
-  if (d.priority) html += `<span>P${d.priority}</span>`;
-  if (d.confidence) html += `<span>${d.confidence}</span>`;
-  if (d.region) html += `<span>${d.region}</span>`;
-  if (d.sector) html += `<span>${d.sector}</span>`;
-  if (d.role) html += `<span>${d.role}</span>`;
-  if (d.ownership) html += `<span>${d.ownership}</span>`;
-  if (d.date) html += `<span>${d.date}</span>`;
-  html += `<span>${connectedEdges.length} connections</span>`;
-  html += `</div>`;
-  
+
+  // ---- Build HTML ----
+  let html = '<div class="detail-top"><h2>' + escapeHtml(d.name) + '</h2><button id="detail-close" onclick="selectNode(null)">✕ Close</button></div>';
+
+  html += '<div class="detail-meta">';
+  html += '<span>' + (d.displayType || d.type) + '</span>';
+  if (d.priority) html += '<span>P' + d.priority + '</span>';
+  if (d.confidence) html += '<span>' + d.confidence + '</span>';
+  if (d.region) html += '<span>' + d.region + '</span>';
+  if (d.sector) html += '<span>' + d.sector + '</span>';
+  if (d.role) html += '<span>' + d.role + '</span>';
+  if (d.ownership) html += '<span>' + d.ownership + '</span>';
+  if (d.date) html += '<span>' + d.date + '</span>';
+  html += '<span>' + connectedEdges.length + ' connections</span>';
+  html += '</div>';
+
   if (d.summary) {
-    html += `<div class="detail-summary">${d.summary}</div>`;
+    html += '<div class="detail-summary">' + escapeHtml(d.summary) + '</div>';
   }
-  
+
   // Key Decisions
   if (d.key_decisions && Array.isArray(d.key_decisions) && d.key_decisions.length > 0) {
-    html += `<div class="detail-section"><h3>Key Decisions</h3>`;
-    const decisions = Array.isArray(d.key_decisions) ? d.key_decisions : [d.key_decisions];
-    decisions.forEach(dec => {
-      html += `<div class="detail-link" style="font-size:12px;line-height:1.4">${dec}</div>`;
+    html += '<div class="detail-section"><h3>Key Decisions</h3>';
+    (Array.isArray(d.key_decisions) ? d.key_decisions : [d.key_decisions]).forEach(dec => {
+      html += '<div class="detail-link" style="font-size:12px;line-height:1.4">' + escapeHtml(dec) + '</div>';
     });
-    html += `</div>`;
+    html += '</div>';
   }
 
   // Labour
   if (d.labour) {
-    html += `<div class="detail-section"><h3>Labour</h3>`;
-    if (d.labour.jobs) html += `<div class="detail-link">Jobs affected: ${d.labour.jobs}</div>`;
-    if (d.labour.affected) html += `<div class="detail-link">Affected: ${d.labour.affected}</div>`;
-    if (d.labour.reason) html += `<div class="detail-link">Reason: ${d.labour.reason}</div>`;
-    if (d.labour.status) html += `<div class="detail-link">Status: ${d.labour.status}</div>`;
-    if (d.labour.membership) html += `<div class="detail-link">Membership: ${d.labour.membership}</div>`;
-    [d.labour].forEach(item => {
-      if (item.layoffs && Array.isArray(item.layoffs)) {
-        item.layoffs.forEach(ly => html += `<div class="detail-link" style="color:var(--danger)">🔴 ${ly}</div>`);
-      }
-      if (item.hiring && Array.isArray(item.hiring)) {
-        item.hiring.forEach(h => html += `<div class="detail-link" style="color:var(--accent2)">🟢 ${h}</div>`);
-      }
-    });
-    html += `</div>`;
+    html += '<div class="detail-section"><h3>Labour</h3>';
+    if (d.labour.jobs) html += '<div class="detail-link">Job impact: ' + d.labour.jobs + '</div>';
+    if (d.labour.affected) html += '<div class="detail-link">Affected: ' + d.labour.affected + '</div>';
+    if (d.labour.reason) html += '<div class="detail-link">Reason: ' + d.labour.reason + '</div>';
+    if (d.labour.status) html += '<div class="detail-link">Status: ' + d.labour.status + '</div>';
+    if (d.labour.membership) html += '<div class="detail-link">Membership: ' + d.labour.membership + '</div>';
+    if (d.labour.layoffs && Array.isArray(d.labour.layoffs)) {
+      d.labour.layoffs.forEach(ly => html += '<div class="detail-link" style="color:var(--danger)">🔴 ' + ly + '</div>');
+    }
+    if (d.labour.hiring && Array.isArray(d.labour.hiring)) {
+      d.labour.hiring.forEach(h => html += '<div class="detail-link" style="color:var(--accent2)">🟢 ' + h + '</div>');
+    }
+    html += '</div>';
   }
 
   // Portfolio (fund → studio)
-  if (d.portfolio && Array.isArray(d.portfolio) && d.portfolio.length > 0) {
-    html += `<div class="detail-section"><h3>Portfolio</h3>`;
-    d.portfolio.forEach(p => {
-      const clean = p.replace(/^\[\[|\]\]$/g, '');
-      const found = allNodes.find(n => n.id.includes(clean.replace(/^orgs\//, '').replace(/^events\//, '').replace(/^people\//, '')));
-      if (found) {
-        html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${found.name} <span class="link-type">· ${found.displayType}</span></div>`;
-      } else {
-        html += `<div class="detail-link">${clean}</div>`;
-      }
-    });
-    html += `</div>`;
-  }
-  
+  html += renderLinkList(d.portfolio, 'Portfolio');
   // LPs
-  if (d.lp && Array.isArray(d.lp) && d.lp.length > 0) {
-    html += `<div class="detail-section"><h3>Limited Partners</h3>`;
-    d.lp.forEach(l => {
-      const clean = l.replace(/^\[\[|\]\]$/g, '');
-      const found = allNodes.find(n => n.id.includes(clean.replace(/^orgs\//, '')));
-      if (found) {
-        html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${found.name} <span class="link-type">· ${found.displayType}</span></div>`;
-      } else {
-        html += `<div class="detail-link">${clean}</div>`;
-      }
-    });
-    html += `</div>`;
-  }
+  html += renderLinkList(d.lp, 'Limited Partners');
+  // Actors
+  html += renderActorList(d.actors);
 
-  // Actors (for events)
-  if (d.actors && Array.isArray(d.actors) && d.actors.length > 0) {
-    html += `<div class="detail-section"><h3>Actors</h3>`;
-    d.actors.forEach(a => {
-      const clean = a.replace(/^\[\[|\]\]$/g, '');
-      const found = allNodes.find(n => n.id.includes(clean.replace(/^orgs\//, '').replace(/^people\//, '')));
-      if (found) {
-        html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${found.name} <span class="link-type">· ${found.displayType}</span></div>`;
-      } else {
-        html += `<div class="detail-link">${clean}</div>`;
-      }
-    });
-    html += `</div>`;
-  }
-
-  // Connected nodes
+  // Connected by type
   const orgConns = connectedNodes.filter(n => n.dir === 'orgs');
   const personConns = connectedNodes.filter(n => n.dir === 'people');
   const eventConns = connectedNodes.filter(n => n.dir === 'events');
-  const sourceConns = connectedNodes.filter(n => n.dir === 'sources');
-  
+
   if (orgConns.length > 0) {
-    html += `<div class="detail-section"><h3>Connected Organizations (${orgConns.length})</h3>`;
+    html += '<div class="detail-section"><h3>Connected Organizations (' + orgConns.length + ')</h3>';
     orgConns.forEach(c => {
-      html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${c.name} <span class="link-type">· ${c.displayType}</span></div>`;
+      html += '<div class="detail-link" onclick="clickNode(\'' + c.id.replace(/'/g, "\\'") + '\')">' + escapeHtml(c.name) + ' <span class="link-type">· ' + (c.displayType || c.type) + '</span></div>';
     });
-    html += `</div>`;
+    html += '</div>';
   }
-  
+
   if (personConns.length > 0) {
-    html += `<div class="detail-section"><h3>Connected People (${personConns.length})</h3>`;
+    html += '<div class="detail-section"><h3>Connected People (' + personConns.length + ')</h3>';
     personConns.forEach(c => {
-      html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${c.name} <span class="link-type">· ${c.role || c.displayType}</span></div>`;
+      html += '<div class="detail-link" onclick="clickNode(\'' + c.id.replace(/'/g, "\\'") + '\')">' + escapeHtml(c.name) + ' <span class="link-type">· ' + (c.role || c.displayType || c.type) + '</span></div>';
     });
-    html += `</div>`;
+    html += '</div>';
   }
-  
+
   if (eventConns.length > 0) {
-    html += `<div class="detail-section"><h3>Connected Events (${eventConns.length})</h3>`;
+    html += '<div class="detail-section"><h3>Connected Events (' + eventConns.length + ')</h3>';
     eventConns.forEach(c => {
-      html += `<div class="detail-link" onclick="window.selectNodeExternal('')">${c.name} <span class="link-type">· ${c.eventType || c.displayType}</span></div>`;
+      html += '<div class="detail-link" onclick="clickNode(\'' + c.id.replace(/'/g, "\\'") + '\')">' + escapeHtml(c.name) + ' <span class="link-type">· ' + (c.eventType || c.displayType || c.type) + '</span></div>';
     });
-    html += `</div>`;
+    html += '</div>';
   }
-  
+
   inner.innerHTML = html;
 }
+
+// Helper to render a list of [[wikilink]] strings as clickable links
+function renderLinkList(items, label) {
+  if (!items || !Array.isArray(items) || items.length === 0) return '';
+  let html = '<div class="detail-section"><h3>' + label + '</h3>';
+  items.forEach(raw => {
+    const clean = raw.replace(/^\[\[|\]\]$/g, '');
+    const found = findNodeByWikilink(clean);
+    if (found) {
+      html += '<div class="detail-link" onclick="clickNode(\'' + found.id.replace(/'/g, "\\'") + '\')">' + escapeHtml(found.name) + ' <span class="link-type">· ' + (found.displayType || found.type) + '</span></div>';
+    } else {
+      html += '<div class="detail-link" style="color:var(--text-dim)">' + escapeHtml(clean) + '</div>';
+    }
+  });
+  html += '</div>';
+  return html;
+}
+
+// Helper for actors list
+function renderActorList(actors) {
+  if (!actors || !Array.isArray(actors) || actors.length === 0) return '';
+  let html = '<div class="detail-section"><h3>Actors</h3>';
+  actors.forEach(raw => {
+    const clean = raw.replace(/^\[\[|\]\]$/g, '');
+    const found = findNodeByWikilink(clean);
+    if (found) {
+      html += '<div class="detail-link" onclick="clickNode(\'' + found.id.replace(/'/g, "\\'") + '\')">' + escapeHtml(found.name) + ' <span class="link-type">· ' + (found.displayType || found.type) + '</span></div>';
+    } else {
+      html += '<div class="detail-link" style="color:var(--text-dim)">' + escapeHtml(clean) + '</div>';
+    }
+  });
+  html += '</div>';
+  return html;
+}
+
+// Find a node by its base name from a [[wikilink]]
+function findNodeByWikilink(clean) {
+  // Try direct match on id suffix
+  for (const n of allNodes) {
+    if (n.id.endsWith('/' + clean) || n.id === clean) return n;
+  }
+  // Try fuzzy match on name
+  const lc = clean.toLowerCase();
+  for (const n of allNodes) {
+    if (n.name.toLowerCase() === lc) return n;
+    if (n.name.toLowerCase().includes(lc)) return n;
+  }
+  return null;
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Global click handler for detail panel links
+window.clickNode = function(id) {
+  const n = allNodes.find(node => node.id === id);
+  if (n) selectNode(n);
+};
 
 // ====== Stats ======
 function updateStats() {
@@ -635,26 +621,22 @@ function updateStats() {
   const people = allNodes.filter(n => n.dir === 'people').length;
   const events = allNodes.filter(n => n.dir === 'events').length;
   const sources = allNodes.filter(n => n.dir === 'sources').length;
-  document.getElementById('stats').textContent = `${orgs} orgs · ${people} people · ${events} events · ${sources} sources`;
+  document.getElementById('stats').textContent = orgs + ' orgs · ' + people + ' people · ' + events + ' events · ' + sources + ' sources';
 }
 
 // ====== Legend ======
 function buildLegend() {
-  const legendEl = document.getElementById('legend');
-  const items = [
-    { label: 'Organizations', color: COLORS['Publisher'] },
-    { label: 'Studios', color: COLORS['Studio'] },
-    { label: 'PE / VC Funds', color: COLORS['PE Fund'] },
-    { label: 'Unions', color: COLORS['Union'] },
-    { label: 'People', color: COLORS['person'] },
-    { label: 'Events (layoffs)', color: COLORS['layoff'] },
-    { label: 'Events (strikes/union)', color: COLORS['strike'] },
-    { label: 'Events (acquisitions)', color: COLORS['acquisition'] },
-    { label: 'Sources', color: COLORS['source'] },
-  ];
-  legendEl.innerHTML = `<div class="legend-title">Node Types</div>` + items.map(i =>
-    `<div class="legend-item"><div class="legend-dot" style="background:${i.color}"></div>${i.label}</div>`
-  ).join('');
+  const el = document.getElementById('legend');
+  el.innerHTML = '<div class="legend-title">Node Types</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#4a7cf7"></div>Organizations</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#50c878"></div>Studios</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ff6b6b"></div>PE / VC Funds</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#e74cee"></div>Unions</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ffa502"></div>People</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#ff4757"></div>Events (layoffs)</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#e74cee"></div>Events (strikes)</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#6c8cff"></div>Events (acquisitions)</div>' +
+    '<div class="legend-item"><div class="legend-dot" style="background:#8b90a0"></div>Sources</div>';
 }
 
 // ====== Filters ======
@@ -667,24 +649,8 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// ====== Node label access for search ======
-let svgWidth, svgHeight;
-let globalNodeData = [];
-let globalWidth = 800;
-let globalHeight = 600;
-
-// Expose for onclick handlers in detail panel
-window.selectNodeExternal = function(id) {
-  const n = allNodes.find(node => node.id === id);
-  if (n) selectNode(n);
-};
-
-window.selectNode = selectNode;
-
-// ====== Init ======
-loadData().then(() => {
-  searchIndex = buildIndex(allNodes);
-});
+// ====== Start ======
+loadData();
 </script>
 </body>
 </html>
